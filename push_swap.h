@@ -6,7 +6,7 @@
 /*   By: jenibaud <jenibaud@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 16:44:12 by jenibaud          #+#    #+#             */
-/*   Updated: 2025/04/08 14:50:25 by jenibaud         ###   ########.fr       */
+/*   Updated: 2025/04/09 15:15:07 by jenibaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,15 @@ int	ss(t_stack **stk);
 int	pa(t_stack **a, t_stack **b);
 int	pb(t_stack **a, t_stack **b);
 int	ra(t_stack **stk);
+int	rra(t_stack **stk, int *index);
+int	rrb(t_stack **stk, int *index);
+
+/*********************Radix**********************/
+
+
+/*********************Parsing**********************/
+static int	ft_isnum(char *num);
+static int	ft_contains(int num, char **argv, int i);
+void		ft_check_args(int argc, char **argv);
 
 #endif

@@ -15,7 +15,7 @@ LIBFT = $(LIBFT_PATH)/libft.a
 
 SRCS =	srcs/gnl/get_next_line.c\
 		srcs/gnl/get_next_line_utils.c\
-		ft_push_swap.c\
+		main.c\
 		ft_s_and_p.c\
 		ft_all_r.c
 
@@ -28,7 +28,6 @@ $(PRINTF):
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_PATH)
-
 
 $(NAME): $(LIBFT) $(PRINTF) $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(PRINTF)
