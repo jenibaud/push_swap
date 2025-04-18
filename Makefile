@@ -13,11 +13,18 @@ PRINTF = $(PRINTF_PATH)/libftprintf.a
 LIBFT_PATH = srcs/Libft
 LIBFT = $(LIBFT_PATH)/libft.a
 
-SRCS =	srcs/gnl/get_next_line.c\
-		srcs/gnl/get_next_line_utils.c\
+SRCS =	handle_errors.c\
+		init_a_to_b.c\
+		init_b_to_a.c\
 		main.c\
-		ft_s_and_p.c\
-		ft_all_r.c
+		rotate.c\
+		sort_stacks.c\
+		sort_three.c\
+		split.c\
+		stack_init.c\
+		stack_utils.c\
+		swap.c\
+		rev_rotate.c
 
 #-----------------------------------------------------RULES-----------------------------------------------#
 
