@@ -5,4 +5,6 @@ The goal is to create an efficient solution that sorts the stack using a limited
 The project focuses on algorithmic thinking and problem-solving skills, as well as understanding sorting techniques and the importance of complexity.
 <br>
 
-For this project, i chosed to use the Radix algorithm and i got a 90/100 note.
+For this project, i chosed to use the Radix algorithm and i got a 90/100 note.<br>
+![image](https://github.com/user-attachments/assets/c41d11dd-0a47-4760-8106-4ac7a18135aa)
+
