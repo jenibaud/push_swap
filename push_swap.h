@@ -6,12 +6,12 @@
 /*   By: jenibaud <jenibaud@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 16:44:12 by jenibaud          #+#    #+#             */
-/*   Updated: 2025/04/21 14:36:09 by jenibaud         ###   ########.fr       */
+/*   Updated: 2025/04/24 14:38:53 by jenibaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUSH_SWAP_H
-# define FT_PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 /*********************Includes**********************/
 
@@ -22,6 +22,8 @@
 # include <stdbool.h>
 # include <limits.h>
 
+/**********************Struct**********************/
+
 typedef struct s_stacks
 {
 	int		*a;
@@ -30,6 +32,8 @@ typedef struct s_stacks
 	int		b_size;
 	char	*join_args;
 }			t_stacks;
+
+/**********************Prototypes**********************/
 
 void		rotate(int *array, int size, char *direction, char *list);
 void		swap(char *str, int *array, int size);
@@ -45,5 +49,7 @@ void		exit_if_sorted_or_has_duplicate(t_stacks *s, int i);
 int			is_array_sorted(t_stacks *s);
 int			ft_atol(const char *n, t_stacks *s);
 int			ft_count_words(char const *s, char c);
+int			check_nbrs(int argc, char **argv);
+int			has_forbidden(char *str);
 
 #endif

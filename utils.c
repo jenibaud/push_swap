@@ -6,7 +6,7 @@
 /*   By: jenibaud <jenibaud@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 14:32:39 by jenibaud          #+#    #+#             */
-/*   Updated: 2025/04/21 14:32:49 by jenibaud         ###   ########.fr       */
+/*   Updated: 2025/04/24 13:52:34 by jenibaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ void	parse_numbers(t_stacks *s)
 
 	z = 0;
 	tmp = ft_split(s->join_args, ' ');
+	if (!tmp || !tmp[0])
+	{
+		free_and_exit_with_message(NULL, "Error\n");
+	}
 	i = 0;
 	while (tmp[i] != NULL && tmp[i][0] != '\0')
 	{
@@ -120,11 +124,11 @@ int	ft_atol(const char *n, t_stacks *s)
 	}
 	while (n[i])
 	{
-		if (res > 2147483647 || (res * sign) < -2147483648 || ft_strlen(n) > 11)
-			free_and_exit_with_message(s, "Error\n");
 		if (!(n[i] >= '0' && n[i] <= '9'))
 			free_and_exit_with_message(s, "Error\n");
 		res = res * 10 + (n[i++] - '0');
+		if (res > 2147483648 || (res * sign) > INT_MAX)
+			free_and_exit_with_message(s, "Error\n");
 	}
 	return ((int)(res * sign));
 }

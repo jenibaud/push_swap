@@ -6,7 +6,7 @@
 /*   By: jenibaud <jenibaud@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 16:42:55 by jenibaud          #+#    #+#             */
-/*   Updated: 2025/04/21 16:34:23 by jenibaud         ###   ########.fr       */
+/*   Updated: 2025/04/24 14:25:35 by jenibaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,25 @@ static void	validate_arguments(int argc, char **argv)
 {
 	int	i;
 	int	j;
+	int	is_num;
 
 	i = 0;
+	is_num = 0;
 	if (argc < 2)
 		free_and_exit_with_message(NULL, "");
 	while (++i < argc)
 	{
 		j = 0;
-		if (argv[i] == NULL)
-			free_and_exit_with_message(NULL, "Error\n");
 		while (argv[i][j] != '\0')
 		{
-			if ((!(ft_isdigit(argv[i][j])) && (argv[i][j] != ' ')
-			&& (argv[i][j] != '-' && argv[i][j] != '+' && argv[i][j] != ' '))
-			|| (argv[i][j] == '-' && argv[i][j + 1] == '\0')
-			|| (argv[i][j] == '+' && argv[i][j + 1] == '\0')
-			|| (argv[i][j] == '-' && argv[i][j + 1] == ' ')
-			|| (argv[i][j] == '+' && argv[i][j + 1] == ' '))
-				free_and_exit_with_message(NULL, "Error\n");
+			if (ft_isdigit(argv[i][j]))
+				is_num = 1;
 			j++;
+		}
+		if (is_num == 0)
+		{
+			free_and_exit_with_message(NULL, "Error\n");
+			break ;
 		}
 	}
 }
@@ -90,6 +90,8 @@ int	main(int argc, char **argv)
 	t_stacks	*s;
 
 	validate_arguments(argc, argv);
+	if (!check_nbrs(argc, argv))
+		free_and_exit_with_message(NULL, "Error\n");
 	s = malloc(sizeof * s);
 	if (s == NULL)
 		exit(1);

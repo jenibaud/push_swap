@@ -16,7 +16,8 @@ LIBFT = $(LIBFT_PATH)/libft.a
 SRCS =	main.c\
 		move.c\
 		sort.c\
-		utils.c
+		utils.c\
+		check_nbrs.c
 
 #-----------------------------------------------------RULES-----------------------------------------------#
 
